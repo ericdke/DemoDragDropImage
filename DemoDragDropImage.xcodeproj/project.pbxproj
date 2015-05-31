@@ -11,6 +11,8 @@
 		C744256F1B1B2ABD00A6F63D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C744256E1B1B2ABD00A6F63D /* Images.xcassets */; };
 		C74425721B1B2ABD00A6F63D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74425701B1B2ABD00A6F63D /* MainMenu.xib */; };
 		C744257E1B1B2ABD00A6F63D /* DemoDragDropImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744257D1B1B2ABD00A6F63D /* DemoDragDropImageTests.swift */; };
+		C74425881B1B2B7700A6F63D /* DemoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74425871B1B2B7700A6F63D /* DemoImageView.swift */; };
+		C74425931B1B4FC700A6F63D /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74425921B1B4FC700A6F63D /* TextManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		C74425771B1B2ABD00A6F63D /* DemoDragDropImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoDragDropImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C744257C1B1B2ABD00A6F63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C744257D1B1B2ABD00A6F63D /* DemoDragDropImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDragDropImageTests.swift; sourceTree = "<group>"; };
+		C74425871B1B2B7700A6F63D /* DemoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoImageView.swift; sourceTree = "<group>"; };
+		C74425921B1B4FC700A6F63D /* TextManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +77,11 @@
 		C74425691B1B2ABD00A6F63D /* DemoDragDropImage */ = {
 			isa = PBXGroup;
 			children = (
-				C744256C1B1B2ABD00A6F63D /* AppDelegate.swift */,
-				C744256E1B1B2ABD00A6F63D /* Images.xcassets */,
+				C74425871B1B2B7700A6F63D /* DemoImageView.swift */,
+				C74425921B1B4FC700A6F63D /* TextManager.swift */,
 				C74425701B1B2ABD00A6F63D /* MainMenu.xib */,
+				C744256E1B1B2ABD00A6F63D /* Images.xcassets */,
+				C744256C1B1B2ABD00A6F63D /* AppDelegate.swift */,
 				C744256A1B1B2ABD00A6F63D /* Supporting Files */,
 			);
 			path = DemoDragDropImage;
@@ -206,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C744256D1B1B2ABD00A6F63D /* AppDelegate.swift in Sources */,
+				C74425881B1B2B7700A6F63D /* DemoImageView.swift in Sources */,
+				C74425931B1B4FC700A6F63D /* TextManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
