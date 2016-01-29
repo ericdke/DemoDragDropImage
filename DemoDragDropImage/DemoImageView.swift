@@ -8,21 +8,21 @@
 
 import Cocoa
 
-class DemoImageView: NSImageView, NSDraggingDestination {
+class DemoImageView: NSImageView {
     
     @IBOutlet var textView: NSTextView!
     @IBOutlet var placeholderMessage: NSTextField!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.registerForDraggedTypes([NSFilenamesPboardType])
+        registerForDraggedTypes([NSFilenamesPboardType])
     }
     
     override func viewDidMoveToWindow() {
-        let trackingOptions: NSTrackingAreaOptions = (.ActiveInActiveApp | .MouseEnteredAndExited | .MouseMoved)
+        let trackingOptions: NSTrackingAreaOptions = [.ActiveInActiveApp, .MouseEnteredAndExited, .MouseMoved]
         let trackingArea = NSTrackingArea(rect: self.bounds, options: trackingOptions, owner: self, userInfo: nil)
-        self.addTrackingArea(trackingArea)
-        self.toolTip = "Déposez une image ici"
+        addTrackingArea(trackingArea)
+        toolTip = "Déposez une image ici"
     }
     
     override func mouseEntered(theEvent: NSEvent) {
@@ -54,9 +54,10 @@ class DemoImageView: NSImageView, NSDraggingDestination {
     }
     
     private func getFilePathFromPasteBoard(sender: NSDraggingInfo) -> String? {
-        if let pasteBoard = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? [AnyObject], path = pasteBoard[0] as? String {
-            appendToTextStorage("Pasteboard contents:\n\n \(pasteBoard)", messageType: .Info)
-            return path
+        if let pasteBoard = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? [AnyObject],
+            path = pasteBoard[0] as? String {
+                appendToTextStorage("Pasteboard contents:\n\n \(pasteBoard)", messageType: .Info)
+                return path
         }
         return nil
     }

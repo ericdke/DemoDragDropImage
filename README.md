@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)
+
 ## Drag & drop une image avec Swift
 
 Avec Swift et Cocoa, le pouvoir dont on dispose en seulement quelques lignes de code est impressionant.

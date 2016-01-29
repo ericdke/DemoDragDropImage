@@ -15,23 +15,19 @@ enum MessageType {
 class TextManager {
     
     class func makeAttributedText(string: String, size: CGFloat = 14.0, messageType: MessageType) -> NSAttributedString {
-        let font: NSFont
-        if let helv = NSFont(name: "Helvetica Neue Light", size: size) {
-            font = helv
-        } else {
-            font = NSFont.systemFontOfSize(size)
-        }
-        var color: NSColor
-        switch messageType {
-        case .Success:
-            color = .greenColor()
-        case .Error:
-            color = .redColor()
-        case .Info:
-            color = .blueColor()
-        default:
-            color = .blackColor()
-        }
+        let font = NSFont(name: "Helvetica Neue Light", size: size) ?? NSFont.systemFontOfSize(size)
+        let color: NSColor = {
+            switch messageType {
+            case .Success:
+                return .greenColor()
+            case .Error:
+                return .redColor()
+            case .Info:
+                return .blueColor()
+            default:
+                return .blackColor()
+            }
+        }()
         let attributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: font]
         return NSAttributedString(string: string, attributes: attributes)
     }
